@@ -1,5 +1,5 @@
 # moonshine
-Controlling LEDs from Klipper using LED Control from jackw01. This repository contains the files and an installation script.
+Controlling LEDs from [Klipper](https://www.klipper3d.org) using [LED Control](https://github.com/jackw01/led-control) and a moonraker component. This repository contains the files and an installation script.
 
 ## Installation
 
