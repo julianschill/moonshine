@@ -14,7 +14,7 @@ This installs LED Control, adds an init.d script to start it at boot, configures
 
 ## Configuration
 
-Edit the file
+1. Edit the file
 ```
 /etc/default/ledcontrol
 ```
@@ -22,7 +22,7 @@ and change the numbers of LEDs to the number of your setup. Then restart ledcont
 ```
 sudo service ledcontrol restart
 ```
-Add the following to your printer.cfg and restart klipper:
+2. Add the following to your printer.cfg and restart klipper:
 ```
 [include ledcontrol.cfg]
 ```
