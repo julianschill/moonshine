@@ -1,0 +1,8 @@
+# Configuration for /etc/init.d/ledcontrol
+
+LEDCONTROL_USER=root
+
+LEDCONTROL_EXEC=/usr/local/bin/ledcontrol
+
+LEDCONTROL_ARGS="--led_pin 18 --led_count 32 --led_pixel_order GRBW --port 8000"
+
