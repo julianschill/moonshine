@@ -9,3 +9,21 @@ git clone https://github.com/julianschill/moonshine.git
 cd moonshine
 ./install.sh
 ```
+
+This installs LED Control, adds an init.d script to start it at boot, configures moonraker and adds some sample gcode macros.
+
+## Configuration
+
+Edit the file
+```
+/etc/default/ledcontrol
+```
+and change the numbers of LEDs to the number of your setup. Then restart ledcontrol with
+```
+sudo service ledcontrol restart
+```
+Add the following to your printer.cfg and restart klipper:
+```
+[include ledcontrol.cfg]
+```
+
