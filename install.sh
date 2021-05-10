@@ -28,7 +28,7 @@ cp ledcontrol.cfg ~/klipper_config/
 
 echo "Configuring moonraker"
 
-grep -qxF '[ledcontrol]' ../klipper_config/moonraker.conf || echo -e '[ledcontrol]\naddress: http://localhost:8000' >> ../klipper_config/moonraker.conf
+grep -qxF '[ledcontrol]' ../klipper_config/moonraker.conf || echo -e '\n[ledcontrol]\naddress: http://localhost:8000' >> ../klipper_config/moonraker.conf
 
 echo "Restarting Moonraker"
 sudo service moonraker restart
