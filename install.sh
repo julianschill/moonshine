@@ -2,7 +2,7 @@
 
 
 echo "Installing pre-requisits"
-sudo apt-get install scons swig
+sudo apt-get install scons swig python3-setuptools
 
 echo "Installing LED Control"
 git clone --recurse-submodules https://github.com/jackw01/led-control.git
