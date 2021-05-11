@@ -11,7 +11,7 @@ cd moonshine
 ./install.sh
 ```
 
-This installs LED Control, adds an init.d script to start it at boot, configures moonraker and adds some sample gcode macros.
+This installs LED Control, adds an init.d script to start it at boot, adds a file to moonraker and configures moonraker and adds some sample gcode macros in the file ledcontrol.cfg.
 
 ## Configuration
 
@@ -25,9 +25,7 @@ and change the numbers of LEDs to the number of your setup.
 ```
 sudo service ledcontrol restart
 ```
-
-3. LED Control should now be accesible with your browser under
-
+LED Control should now be accesible with your browser under
 ```http://<ip_of_the_pi>:8000```
 
 4. Add the following to your printer.cfg and restart klipper:
@@ -35,3 +33,10 @@ sudo service ledcontrol restart
 [include ledcontrol.cfg]
 ```
 
+## Calling the patterns from Klipper
+
+In the file ledcontrol.cfg exists a basic macro called SET_LED_CONTROL, which calls moonraker to set the patterns in LED Control. There are also the ids of the patterns and palettes in the comments and some sample scripts for Light, Dark, RGB and Disco. 
+
+## Creating your own patterns and palettes (advanced)
+
+You can create patterns and pallettes over the UI of LED Control by opening ```http://<ip_of_the_pi>:8000``` in your browser. Once you are happy with your settings you can get the ids of the patterns by calling ```http://<ip_of_the_pi>:8000/getpatternsources``` and ```http://<ip_of_the_pi>:8000/getpalettes```. This responds with a JSON object containing the data of the configured patterns. For better readability you can open the file in a JSON formatter tool such as https://jsonformatter.org/. We are looking for the ids of the patterns and palettes, which are the keys of the JSON objects. You can then use those ids additionaly to the provided ones in your klipper macros.
