@@ -26,7 +26,11 @@ and change the numbers of LEDs to the number of your setup.
 sudo service ledcontrol restart
 ```
 
-3. Add the following to your printer.cfg and restart klipper:
+3. LED Control should now be accesible with your browser under
+
+```http://<ip_of_the_pi>:8000```
+
+4. Add the following to your printer.cfg and restart klipper:
 ```
 [include ledcontrol.cfg]
 ```
