@@ -11,6 +11,12 @@ cd moonshine
 ./install.sh
 ```
 
+You can specify your klipper configuration directory and the moonraker directory with
+```
+./install.sh [-c /path/to/configuration_directory] [-m /path/to/moonraker]
+```
+if it is not in ~/klipper_config and ~/moonraker, respectively
+
 This installs LED Control, adds an init.d script to start it at boot, adds a file to moonraker and configures moonraker and adds some sample gcode macros in the file ledcontrol.cfg.
 
 ## Configuration
@@ -40,3 +46,10 @@ In the file ledcontrol.cfg exists a basic macro called SET_LED_CONTROL, which ca
 ## Creating your own patterns and palettes (advanced)
 
 You can create patterns and pallettes over the UI of LED Control by opening ```http://<ip_of_the_pi>:8000``` in your browser. Once you are happy with your settings you can get the ids of the patterns by calling ```http://<ip_of_the_pi>:8000/getpatternsources``` and ```http://<ip_of_the_pi>:8000/getpalettes```. This responds with a JSON object containing the data of the configured patterns. For better readability you can open the file in a JSON formatter tool such as https://jsonformatter.org/. We are looking for the ids of the patterns and palettes, which are the keys of the JSON objects. You can then use those ids additionaly to the provided ones in your klipper macros.
+
+The saved configuration of LED Control can be found in 
+```
+/etc/ledcontrol.json
+```
+
+
