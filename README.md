@@ -5,7 +5,7 @@ Controlling LEDs from [Klipper](https://www.klipper3d.org) using [LED Control](h
 
 This supports WS2812B or SK6812 LED strips connected to a raspberry pi.
 
-Check the section in the [LED_Control documentation](https://github.com/jackw01/led-control#hardware-setup) on how to connect the LEDs.
+Check the section in the [LED Control documentation](https://github.com/jackw01/led-control#hardware-setup) on how to connect the LEDs.
 
 ## Installation
 
