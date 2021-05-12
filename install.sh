@@ -1,5 +1,24 @@
 #!/bin/bash
 
+CONFIG_DIR=~/klipper_config
+MOONRAKER_DIR=~/moonraker
+while getopts c:m flag
+do
+    case "${flag}" in
+        c) CONFIG_DIR=${OPTARG};;
+        m) MOONRAKER_DIR=${OPTARG};;
+    esac
+done
+
+if [ ! -d "$CONFIG_DIR" ]; then
+  echo "Cannot find klipper configuration directory ${CONFIG_DIR}. Please specify with -c <directory>"
+  exit 1
+fi
+
+if [ ! -d "$MOONRAKER_DIR" ]; then
+  echo "Cannot find klipper configuration directory ${CONFIG_DIR}. Please specify with -m <directory>"
+  exit 1
+fi
 
 echo "Installing pre-requisits"
 sudo apt-get install scons swig python3-setuptools
@@ -20,18 +39,19 @@ sudo update-rc.d ledcontrol defaults
 echo "Starting LED Control"
 sudo service ledcontrol start
 
-echo "Copying moonraker component"
-ln -sr ./ledcontrol.py ~/moonraker/moonraker/components
+echo "Installing moonraker component"
+ln -sr ./ledcontrol.py $MOONRAKER_DIR/moonraker/components
 
-echo "Copying klipper macros"
-ln -sr ./ledcontrol.cfg ~/klipper_config/
+echo "Installing klipper macros"
+ln -sr ./ledcontrol.cfg $CONFIG_DIR/ledcontrol.cfg
 
 echo "Configuring moonraker"
 
-grep -qxF '[ledcontrol]' ../klipper_config/moonraker.conf || echo -e '\n[ledcontrol]\naddress: http://localhost:8000' >> ../klipper_config/moonraker.conf
+grep -qxF '[ledcontrol]' $CONFIG_DIR/moonraker.conf || echo -e '\n[ledcontrol]\naddress: http://localhost:8000' >> $CONFIG_DIR/moonraker.conf
 
 echo "Restarting Moonraker"
 sudo service moonraker restart
 
-echo "Installation finished. Configure your LEDs in /etc/defaults/ledcontrol"
+echo "Installation finished."
+echo ""
 echo "Add [include ledcontrol.cfg] to your printer.cfg and restart klipper"
