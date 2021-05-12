@@ -1,6 +1,12 @@
 # moonshine
 Controlling LEDs from [Klipper](https://www.klipper3d.org) using [LED Control](https://github.com/jackw01/led-control) and a moonraker component. This repository contains the files and an installation script. 
 
+## Hardware setup
+
+This supports WS2812B or SK6812 LED strips connected to a raspberry pi.
+
+Check the section in the [LED_Control documentation](https://github.com/jackw01/led-control#hardware-setup) on how to connect the LEDs.
+
 ## Installation
 
 This installation is adapted for MainsailOS, FluiddPi or a setup done by KIAUH.
