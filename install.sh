@@ -21,10 +21,10 @@ echo "Starting LED Control"
 sudo service ledcontrol start
 
 echo "Copying moonraker component"
-cp ledcontrol.py ~/moonraker/moonraker/components
+ln -s ledcontrol.py ~/moonraker/moonraker/components
 
 echo "Copying klipper macros"
-cp ledcontrol.cfg ~/klipper_config/
+ln -s ledcontrol.cfg ~/klipper_config/
 
 echo "Configuring moonraker"
 
