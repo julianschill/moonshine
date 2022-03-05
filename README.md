@@ -55,26 +55,30 @@ In the file ledcontrol.cfg exists a basic macro called SET_LED_CONTROL, which ca
 
 2. Call the macro to start this preset:
 
-```SET_LED_CONTROL PRESET="my_own_preset```
+```
+SET_LED_CONTROL PRESET="my_own_preset"
+```
 
 Change `my_own_preset` to the name you entered in the web interface
 
 ### Modify settings directls
 You can also change parameters by calling the macro:
-```SET_LEDCONTROL GROUP="main" BRIGHTNESS=0.7 SATURATION=0.5 PATTERN=0 SCALE=0.2 SPEED=0.4 PALETTE=0```
+```
+SET_LEDCONTROL GROUP="main" BRIGHTNESS=0.7 SATURATION=0.5 PATTERN=0 SCALE=0.2 SPEED=0.4 PALETTE=0 GLOBAL_BRIGHTNESS=1.0 GLOBAL_SATURATION=1.0
+```
 
 You can set one or multiple parameters at once.
 
 #### Parameters:
-  * GROUP: The name of the LED group to configure, as named in the web interface (or the id, as defined in `/etc/ledcontrol.json`). If not specified the "main" group is selected.
-  * BRIGHTNESS: The brightness for the group
-  * SATURATION: The saturation value for the group
-  * PATTERN: The pattern id (see [ledcontrol.cfg] for a list of built in ids)
-  * SCALE: The scale value for the pattern
-  * SPEED: The speed value for the pattern
-  * PALETTE: The id of the palette (see [ledcontrol.cfg] for a list of built in ids)
-  * GLOBAL_BRIGHTNESS: The brightness for all LEDs
-  * GLOBAL_SATURATION: The saturation for all LEDs
+  * **GROUP**: The name of the LED group to configure, as named in the web interface (or the id, as defined in `/etc/ledcontrol.json`). If not specified the "main" group is selected.
+  * **BRIGHTNESS**: The brightness for the group
+  * **SATURATION**: The saturation value for the group
+  * **PATTERN**: The pattern id (see [ledcontrol.cfg] for a list of built in ids)
+  * **SCALE**: The scale value for the pattern
+  * **SPEED**: The speed value for the pattern
+  * **PALETTE**: The id of the palette (see [ledcontrol.cfg] for a list of built in ids)
+  * **GLOBAL_BRIGHTNESS**: The brightness for all LEDs
+  * **GLOBAL_SATURATION**: The saturation for all LEDs
 
 ## Creating your own patterns and palettes (advanced)
 
