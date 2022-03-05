@@ -1,5 +1,11 @@
 # moonshine
-Controlling LEDs from [Klipper](https://www.klipper3d.org) using [LED Control](https://github.com/jackw01/led-control) and a moonraker component. This repository contains the files and an installation script. 
+Controlling LEDs from [Klipper](https://www.klipper3d.org) using [LED Control](https://github.com/jackw01/led-control) and a moonraker component. This repository contains the needed files and an installation script. 
+
+## Hardware setup
+
+This supports WS2812B or SK6812 LED strips connected to a raspberry pi.
+
+Check the section in the [LED Control documentation](https://github.com/jackw01/led-control#hardware-setup) on how to connect the LEDs.
 
 ## Installation
 
@@ -74,7 +80,7 @@ You can set one or multiple parameters at once.
 
 You can create patterns and palettes over the UI of LED Control by opening ```http://<ip_of_the_pi>:8000``` in your browser. Once you are happy with your settings you can get the ids of the patterns by calling ```http://<ip_of_the_pi>:8000/getfunctions``` and ```http://<ip_of_the_pi>:8000/getpalettes```. This responds with a JSON object containing the data of the configured patterns and palettes. For better readability you can open the file in a JSON formatter tool such as https://jsonformatter.org/. We are looking for the ids of the patterns and palettes, which are the keys of the JSON objects. You can then use those ids additionaly to the provided ones in your klipper macros.
 
-The saved configuration of LED Control can be found in 
+The saved configuration of LED Control, where the IDs can be found and edited can be found in 
 ```
 /etc/ledcontrol.json
 ```
