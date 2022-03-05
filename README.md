@@ -61,7 +61,7 @@ SET_LED_CONTROL PRESET="my_own_preset"
 
 Change `my_own_preset` to the name you entered in the web interface
 
-### Modify settings directls
+### Modify settings directly
 You can also change parameters by calling the macro:
 ```
 SET_LEDCONTROL GROUP="main" BRIGHTNESS=0.7 SATURATION=0.5 PATTERN=0 SCALE=0.2 SPEED=0.4 PALETTE=0 GLOBAL_BRIGHTNESS=1.0 GLOBAL_SATURATION=1.0
