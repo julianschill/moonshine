@@ -21,11 +21,12 @@ if [ ! -d "$MOONRAKER_DIR" ]; then
 fi
 
 echo "Installing pre-requisits"
-sudo apt-get install scons swig python3-setuptools
+sudo apt-get install -y scons swig libev-dev python3-dev python3-setuptools 
 
 echo "Installing LED Control"
 git clone --recurse-submodules https://github.com/jackw01/led-control.git
 cd led-control
+git checkout tags/v2.0.0
 sudo python3 setup.py develop
 cd ..
 
