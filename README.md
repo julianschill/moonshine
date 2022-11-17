@@ -56,7 +56,7 @@ In the file ledcontrol.cfg exists a basic macro called SET_LED_CONTROL, which ca
 2. Call the macro to start this preset:
 
 ```
-SET_LED_CONTROL PRESET="my_own_preset"
+SET_LEDCONTROL PRESET="my_own_preset"
 ```
 
 Change `my_own_preset` to the name you entered in the web interface
