@@ -1,6 +1,11 @@
 # moonshine
 Controlling LEDs from [Klipper](https://www.klipper3d.org) using [LED Control](https://github.com/jackw01/led-control) and a moonraker component. This repository contains the needed files and an installation script. 
 
+## DEPRECATION WARNING
+
+This is not actively maintained any more, as I am now concentrating on [LED Effect](https://github.com/julianschill/klipper-led_effect).
+Please consider using this for controlling LEDs from Klipper. Alternatively you can also use the [WLED support](https://moonraker.readthedocs.io/en/latest/configuration/#wled) from moonraker. 
+
 ## Hardware setup
 
 This supports WS2812B or SK6812 LED strips connected to a raspberry pi.
